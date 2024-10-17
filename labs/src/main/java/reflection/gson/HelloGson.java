@@ -24,12 +24,13 @@ public class HelloGson {
     }
 
     public static String toJsonString(PersonClass person) {
+
         return gson.toJson(person);
     }
 
     public static PersonClass fromJsonString(String json) {
         // todo: return a PersonClass object from the json string
-        return null;
+        return gson.fromJson(json, PersonClass.class);
     }
 
     public static void main(String[] args) {

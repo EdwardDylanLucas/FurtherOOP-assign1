@@ -8,8 +8,10 @@ import java.util.List;
 
 public class HelloGsonRecord {
 
-    // todo: modify this to support reading records using a GsonBuilder
-    static Gson gson = new Gson();
+    // todo: modify this to support reading records using a GsonBuilder.
+    static Gson gson = new GsonBuilder()
+            .registerTypeAdapterFactory(new RecordTypeAdapterFactory())
+            .create();
 
     public record QMPerson(String firstnames, String surname,
                     String email, int personId, boolean isCurrent) {
